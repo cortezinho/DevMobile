@@ -1,0 +1,13 @@
+1 - Baixar o Node.js:  https://nodejs.org/pt
+
+2 - No CMD: npm install -g expo-cli (para instalar o Expo)
+
+3 - Conferir: expo --version 
+
+4 - Criar Projeto: npx expo init "Nome do projeto" 
+
+5 - Abrir Projeto: npx expo start
+
+6 - Rodar no powerShell Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine 
+
+7 - Para Abrir web npx expo install react-dom react-native-web @expo/metro-runtime
