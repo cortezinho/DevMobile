@@ -5,13 +5,13 @@ import { Audio } from 'expo-av';
 export default function App(){
   const [sound, setSound] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [isLooping, setLoop] = useState(false);
+  const [isLooping, setIsLoop] = useState(false);
 
   async function loadSound(){
     console.log('Carregando Som...');
     try{
       const {sound} = await Audio.Sound.createAsync(
-        require('./assets/560446.mp3')
+        require('./assets/hinopalmeiras.mp3')
       );
       setSound(sound);
       console.log('Som Carregado');
@@ -77,10 +77,18 @@ export default function App(){
     };
   }, [])
   return(
-    <View style = {Style.container}>
+    <View style = {Styles.container}>
       <Button title = {isPlaying ? 'Pausar som' : 'Tocar som'} onPress={isPlaying ? pauseSound : playSound} disabled = {!sound}/>
       <Button title = {isPlaying ? 'Desativar Loop' : 'Ativar Loop'} onPress={setLooping} disabled = {!sound}/><Button title = {isPlaying ? 'Desativar Loop' : 'Ativar Loop'} onPress={setLooping} disabled = {!sound}/>
       <Button title = "Descarregar som" onPress={unloadSound} disabled = {!sound}/>
     </View>
   )
 }
+
+const Styles = StyleSheet.create({
+  container: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+  },
+});
